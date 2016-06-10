@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url('index.css');
 @import url('login.css');
-@import url('html.css');
+@import url('todo.css');
 @import url('font.css');
 
 html,
@@ -53,3 +53,20 @@ a.hover {
     background-color: rgba(238, 238, 238, 0.8);
 }
 
+
+#designer {
+    width: 100px;;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 12px;
+    float: right;
+    line-height: 40px;
+    text-align: center;
+    
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.01);
+}

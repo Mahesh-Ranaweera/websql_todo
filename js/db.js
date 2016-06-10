@@ -17,7 +17,7 @@ if (window.openDatabase) {
 //todo display func
 function todo_info(transaction, results){
     var todo_list = "";
-    var cont_list = document.getElementById("");
+    var cont_list = document.getElementById("todo_cont");
     
     cont_list.innerHTML = "";
     
