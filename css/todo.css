@@ -117,29 +117,9 @@
     font-weight: 700;
 }
 
-.head_txt_exit {
-    position: absolute;
-    right: 0;
-    top: 0;
-    
-    text-align: center;
-    line-height: 21px;
-    font-size: 14px;
-    color: rgba(238, 238, 238, 1);
-    margin: 13px;
-    padding-left: 1px;
-    
-    cursor: pointer;
-    
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: rgba(231, 76, 60, 0.4);
-}
 
-.head_txt_exit:hover{
-    background-color: rgba(231, 76, 60, 0.84);
-}
+
+
 
 #add_btn_text {
     width: 100px;;
@@ -151,6 +131,7 @@
     float: left;
     line-height: 40px;
     text-align: center;
+    font-weight: 500;
     
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
@@ -165,3 +146,27 @@
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
+
+
+
+.exit_btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 13px;
+    cursor: pointer;
+    
+    width: 24px;
+    height: 24px;
+    background: url(../assets/svg/exit_btn.svg)no-repeat;
+    opacity: 0.5;
+    
+    border-radius: 50%;
+}
+
+.exit_btn:hover{
+    opacity: 0.84;
+    background-color: rgba(238, 238, 238, 1);
+}
+
+
