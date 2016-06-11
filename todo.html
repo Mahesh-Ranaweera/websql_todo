@@ -3,63 +3,86 @@
 
 <head>
     <title>testSql</title>
-    
+
     <meta charset="UTF-8">
-        <meta name="description" content="minimalDesign">
-        <meta name="author" content="mi6softlab">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/main.css" type="text/css">
-        <script src="js/jquery-1.12.4.js"></script>
-    
-    
-        <script>
-            function visibleON(){
-                document.getElementById('todo_input_wrapper').style.display = "block";
-            }
-            
-            function visibleOFF(){
-                document.getElementById('todo_input_wrapper').style.display = "none";
-            }
-        </script>
+    <meta name="description" content="minimalDesign">
+    <meta name="author" content="mi6softlab">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <script src="js/jquery-1.12.4.js"></script>
+
+
+    <script>
+        function visibleON() {
+            document.getElementById('todo_input_wrapper').style.display = "block";
+            document.getElementById('dark_bg').style.display = "block";
+        }
+
+        function visibleOFF() {
+            document.getElementById('todo_input_wrapper').style.display = "none";
+            document.getElementById('dark_bg').style.display = "none";
+        }
+    </script>
 </head>
 
 <body>
     <div id="add_btn" onclick="visibleON();">+</div>
     <div id="add_btn_text">ADD TODO</div>
+
+    <!--dim dark background-->
+    <div id="dark_bg"></div>
     
     <div id="todo_input_wrapper">
         <div class="todo_head_text">
             <div class="head_txt">TODO</div>
             <div class="exit_btn" onclick="visibleOFF();"></div>
         </div>
-        
+
         <div class="todo_input_wrapper_half">
             <label>Title:</label>
-            <input class="input" type="text" id="task" placeholder="Enter the Title"/>
+            <input class="input" type="text" id="task" placeholder="Enter the Title" />
         </div>
-        
+
         <div class="todo_input_wrapper_half">
             <label>Date:</label>
-            <input class="input" type="date" id="task" placeholder="Enter the Task"/>
+            <input class="input" type="date" id="task" placeholder="Enter the Task" />
         </div>
-        
+
         <div class="todo_input_wrapper">
             <label>Task:</label>
-            <input class="input" type="text" id="task" placeholder="Enter the Task"/>
+            <input class="input" type="text" id="task" placeholder="Enter the Task" />
         </div>
-        
+
         <div class="todo_input_wrapper">
             <label>Description:</label>
-            <input class="input" type="text" id="task" placeholder="Enter Description"/>
+            <input class="input" type="text" id="task" placeholder="Enter Description" />
         </div>
-        
+
         <div class="todo_input_wrapper">
             <label>Tag:</label>
-            <input class="input" type="text" id="task" placeholder="Enter the Tag"/>
+            <input class="input" type="text" id="task" placeholder="Enter the Tag" />
         </div>
     </div>
-    
-    
+
+    <!--todo display container-->
+    <div id="todo_container">
+        <div class="card_center_wrapper">
+            <div id="todo_card">
+                <div class="delete_btn"></div>
+            </div>
+            <div id="todo_card"></div>
+            <div id="todo_card"></div>
+            <div id="todo_card"></div>
+            <div id="todo_card"></div>
+            <div id="todo_card"></div>
+            <div id="todo_card"></div>
+            <div id="todo_card"></div>
+            <div id="todo_card"></div>
+            <div id="todo_card"></div>
+        </div>
+    </div>
+
+
     <!--footer-->
     <div id="designer">mi6softlab</div>
 

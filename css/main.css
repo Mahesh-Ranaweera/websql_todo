@@ -64,6 +64,7 @@ a.hover {
     float: right;
     line-height: 40px;
     text-align: center;
+    z-index: 5000;
     
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
