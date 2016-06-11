@@ -188,16 +188,31 @@
 #todo_card {
     width: 526px;
     height: 100px;
+    
     margin: 5px;
     float: left;
+    
+    display: block;
     
     background-color: white;
     
     border-radius: 2px;
     
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    
     -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+#todo_card:hover{
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -226,6 +241,53 @@
     width: 20px;
     height: 100%;
     
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    
+    cursor: pointer;
+    
     float: right;
-    background-color: bisque;
+    background-color: #E26A6A;
+}
+
+.delete_btn:hover {
+    background-color: #D64541;
+}
+
+.delete_btn:hover .deletebtn{
+    opacity: 0.84;
+}
+
+.todo_info {
+    width: 498px;
+    height: 90px;
+    margin-left: 5px;
+    margin-top: 5px;
+    padding: 2px;
+    float: left;
+    
+    overflow-y: auto;
+    
+    display: block;
+    position: absolute;
+    word-break: break-all;
+}
+
+.deletebtn {
+    width: 18px;
+    height: 18px;
+    margin-top: 41px;
+    padding-right: 2px;
+    background: url(../assets/svg/delete_btn.svg);
+    opacity: 0.5;
+}
+
+
+
+.card_task {
+    width: 100%;
+    height: auto;
+    
+    line-height: 30px;
+    font-size: 20px;
 }
