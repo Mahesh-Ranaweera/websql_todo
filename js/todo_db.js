@@ -2,11 +2,12 @@
 
 if(window.openDatabase){
     //create the database for the todo
-    // required fields are Title, Date, Task, Description, and Tag : 1024*1024 = 1MB
-    var tododb = openDatabase("todo_db","0.1","todo_list", 2*1024*1024);
+    // required fields are Date, Task, Description, and Tag : 1024*1024 = 1MB
+    var db = openDatabase("tododb","0.1","todo_database", 2*1024*1024);
     
-    tododb.transaction(function(t){
-        t.executeSql("CREATE TABLE IF NOT EXISTS todo (date TEXT, title TEXT, task TEXT, desc TEXT, tag TEXT)");
+    db.transaction(function(t){
+        t.executeSql("CREATE TABLE IF NOT EXISTS todotb (idtodo INTEGER PRIMARY KEY ASC, date TEXT, task TEXT, desc TEXT, tag TEXT)");
+        //t.executeSql("INSERT INTO todotb (date, task, desc, tag) VALUES (2016, games, description, tag)");
     });
 }
 else{
@@ -15,20 +16,19 @@ else{
 
 function addTodo(){
     //check status of db is available
-    if(tododb){
+    if(db){
         //get info from the input panel
-        var title = document.getElementById("title_txt").value;
         var date  = document.getElementById("date_txt").value;
         var task  = document.getElementById("task_txt").value;
         var desc  = document.getElementById("desc_txt").value;
         var tag   = document.getElementById("tag_txt").value;
         
         //check weather data is entered into the inputs
-        if (title != "" && date != "" && task != "" && desc !="" && tag != ""){
+        if (date != "" && task != "" && desc !="" && tag != ""){
             
             //enter the values into the db
-            tododb.transaction(function(t){
-                t.executeSql("INSERT INTO todo (date, title, task, desc, tag) VALUES (?, ?, ?, ?, ?)", [date, title, task, desc, tag]);
+            db.transaction(function(t){
+                t.executeSql("INSERT INTO todotb (date, task, desc, tag) VALUES (?, ?, ?, ?)", [date, task, desc, tag]);
                 
                 //close the input panel
                 visibleOFF();
@@ -46,11 +46,11 @@ function addTodo(){
 
 function displayTodo(){
     //check status of db is available
-    if(tododb){
+    if(db){
         //get info from the db
-        tododb.transaction(function(t){
+        db.transaction(function(t){
             // * means select all from the given table
-            t.executeSql("SELECT * FROM todo", [], refreshTodo);
+            t.executeSql("SELECT * FROM todotb ", [], refreshTodo);
         });
     }
     else{
@@ -69,15 +69,21 @@ function refreshTodo(transaction, results){
         var todoRow = results.rows.item(i);
         
         //display the info in todo cards
-        todoList.innerHTML += "<div id='todo_card'><div class='todo_info'><div class='card_task'>"+todoRow.task+"</div><div class='card_Description'>"+todoRow.desc+"</div><div class='block'><div class='card_small_info'>Date: "+todoRow.date+"</div><div class='card_small_info'>Tag: "+todoRow.tag+"</div></div></div><div class='delete_btn smooth'><div class='deletebtn smooth'></div></div></div>";
+        todoList.innerHTML += "<div id='todo_card'><div class='todo_info'><div class='card_task'>"+todoRow.task+"</div><div class='card_Description'>"+todoRow.desc+"</div><div class='block'><div class='card_small_info'>Date: "+todoRow.date+"</div><div class='card_small_info'>Tag: "+todoRow.tag+"</div></div></div><a href='javascript:void(0);' onclick='removeTodo(" + todoRow.idtodo + ");'><div class='delete_btn smooth'><div class='deletebtn smooth'></div></div></a></div>";
     }
 }
 
 
-
-
-function removeTodo(){
-    
+function removeTodo(idtodo){
+    //check status of db available
+    if(db){
+        db.transaction(function(t){
+            t.executeSql("DELETE FROM todotb WHERE rowid=?", [idtodo], displayTodo);
+        });
+    }
+    else{
+        alert("Something went wrong!");
+    }
 }
 
 
