@@ -64,12 +64,26 @@ function refreshTodo(transaction, results){
     
     todoList.innerHTML = "";
     
-    for(var i = 0; i < results.rows.length; i++){
-        //info from each row
-        var todoRow = results.rows.item(i);
-        
-        //display the info in todo cards
-        todoList.innerHTML += "<div id='todo_card'><div class='todo_info'><div class='card_task'>"+todoRow.task+"</div><div class='card_Description'>"+todoRow.desc+"</div><div class='block'><div class='card_small_info'>Date: "+todoRow.date+"</div><div class='card_small_info'>Tag: "+todoRow.tag+"</div></div></div><a href='javascript:void(0);' onclick='removeTodo(" + todoRow.idtodo + ");'><div class='delete_btn smooth'><div class='deletebtn smooth'></div></div></a></div>";
+    //id the table is emplty
+    if(results.rows.length == 0){
+        todoList.innerHTML = "<div id='lonelymsg'></div>";
+    }
+    else{
+            for(var i = 0; i < results.rows.length; i++){
+            //info from each row
+            var todoRow = results.rows.item(i);
+
+            //get the date and remove each content as year, month and date
+            var dateEntry = todoRow.date;
+            var arrayDate = dateEntry.split("-");
+
+            var year = arrayDate[0];
+            var month= arrayDate[1];
+            var curdate = arrayDate[2]; 
+
+            //display the info in todo cards
+            todoList.innerHTML += "<div id='todo_card'><div class='todo_info'><div class='card_task'>"+todoRow.task+"</div><div class='card_Description'>"+todoRow.desc+"</div><div class='block'><div class='card_small_info'>Year: "+year+" month: "+month+" date: "+curdate+"</div><div class='card_small_info'>Tag: "+todoRow.tag+"</div></div></div><a href='javascript:void(0);' onclick='removeTodo(" + todoRow.idtodo + ");'><div class='delete_btn smooth'><div class='deletebtn smooth'></div></div></a></div>";
+        }
     }
 }
 

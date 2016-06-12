@@ -369,3 +369,10 @@
     background-color: rgba(33, 150, 243, 0.84);
     color: white;
 }
+
+#lonelymsg {
+    width: 526px;
+    height: 400px;
+    
+    background: url(../assets/svg/lonely.svg);
+}
