@@ -1,5 +1,4 @@
-
-
+/*todo css*/
 
 #todo_input_wrapper {
     width: 526px;
@@ -187,11 +186,10 @@
 
 #todo_card {
     width: 526px;
-    height: 100px;
-    
-    margin: 5px;
+    height: auto;
     float: left;
     
+    margin: 5px;
     display: block;
     
     background-color: white;
@@ -224,6 +222,9 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
 }
 
 #dark_bg {
@@ -238,15 +239,18 @@
 }
 
 .delete_btn {
-    width: 20px;
-    height: 100%;
+    width: 100%;
+    height: 20px;
     
-    border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    margin-left: auto;
+    margin-right: auto;
     
     cursor: pointer;
+    display: block;
+    float: left;
     
-    float: right;
     background-color: #E26A6A;
 }
 
@@ -259,24 +263,27 @@
 }
 
 .todo_info {
-    width: 498px;
-    height: 90px;
+    width: 512px;
+    height: auto;
+    min-height: 100px;
     margin-left: 5px;
     margin-top: 5px;
+    margin-bottom: 5px;
     padding: 2px;
     float: left;
     
-    overflow-y: auto;
-    
     display: block;
-    position: absolute;
     word-break: break-all;
 }
 
 .deletebtn {
     width: 18px;
     height: 18px;
-    margin-top: 41px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto
     padding-right: 2px;
     background: url(../assets/svg/delete_btn.svg);
     opacity: 0.5;
@@ -287,7 +294,38 @@
 .card_task {
     width: 100%;
     height: auto;
+    float: left;
+    display: block;
+    color: rgba(0, 0, 0, 0.84);
     
     line-height: 30px;
     font-size: 20px;
+}
+
+.card_small_info {
+    width: 50%;
+    height: auto;
+    float: left;
+    display: block;
+    
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.block {
+    width: 100%;
+    height: auto;
+    float: left;
+    display: block;
+}
+
+.card_Description {
+    width: 100%;
+    height: auto;
+    float: left;
+    display: block;
+    color: rgba(0, 0, 0, 0.54);
+    
+    line-height: 30px;
+    font-size: 14px;
 }
