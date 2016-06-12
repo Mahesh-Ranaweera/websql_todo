@@ -80,3 +80,18 @@ a.hover {
     color: rgba(0, 0, 0, 0.4);
     background-color: rgba(0, 0, 0, 0.01);
 }
+
+.todo_logo {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: url(../assets/svg/todo_logo.svg) no-repeat;
+    
+    /*jQuery fade load*/
+    display: none;
+}

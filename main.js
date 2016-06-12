@@ -17,7 +17,7 @@ function createWindow() {
     win = new BrowserWindow({
         width: 960,
         height: 600,
-        title: "My APP",
+        title: "ToDo",
         icon: 'assets/img/logo.png', //custom logo location
         resizable: false
     });
@@ -25,13 +25,13 @@ function createWindow() {
     win.setMenuBarVisibility(false);
 
     // and load the index.html of the app.
-    win.loadURL(`file://${__dirname}/todo.html`);
+    win.loadURL(`file://${__dirname}/main.html`);
     //win.loadURL(`http://www.mi6softlab.com/`);
 
 
 
     // Open the DevTools.
-    win.webContents.openDevTools();
+    //win.webContents.openDevTools();
 
     // Emitted when the window is closed.
     win.on('closed', () => {

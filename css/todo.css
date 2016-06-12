@@ -94,6 +94,9 @@
     -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+    
+    /*for jquery load*/
+    display: none;
 }
 
 #add_btn:hover{
@@ -145,6 +148,9 @@
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+    
+    /*for jquery load*/
+    display: none;
 }
 
 
@@ -182,6 +188,9 @@
     margin-left: auto;
     margin-right: auto;
     overflow-y: auto;
+    
+    /*for jquery load*/
+    display: none;
 }
 
 #todo_card {
@@ -376,3 +385,72 @@
     
     background: url(../assets/svg/lonely.svg);
 }
+
+#settings_btn {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    margin: 12px;
+    cursor: pointer;
+    z-index: 5000;
+    
+    background-color: white;
+    background: url(../assets/svg/settings.svg) no-repeat 0px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+    
+    /*for jquery load*/
+    display: none;
+}
+
+#settings_btn:hover{
+    color: rgba(0, 0, 0, 0.84);
+    background: url(../assets/svg/settings.svg) no-repeat 0px -43px;
+    
+    -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+#settings_text {
+    width: 100px;;
+    height: 40px;
+    position: absolute;
+    top: 50px;
+    left: 50px;;
+    margin: 12px;
+    float: left;
+    line-height: 40px;
+    text-align: center;
+    font-weight: 500;
+    z-index: 5000;
+    
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.01);
+    
+    /*display: none;*/
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    
+    /*for jquery load*/
+    display: none;
+}
+
+#settings_btn:hover + #settings_text{
+    /*display: block;*/
+    opacity: 1;
+}
+
+

@@ -2,14 +2,14 @@
 <html>
 
 <head>
-    <title>testSql</title>
+    <title>todo</title>
 
     <meta charset="UTF-8">
     <meta name="description" content="minimalDesign">
     <meta name="author" content="mi6softlab">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/main.css" type="text/css">
-    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-3.0.0.js" onload="window.$ = window.jQuery = module.exports;"></script>
 
 
     <script>
@@ -22,31 +22,27 @@
             document.getElementById('todo_input_wrapper').style.display = "none";
             document.getElementById('dark_bg').style.display = "none";
         }
-        
-        function display(){
-            var date = document.getElementById("date_txt").value;
-            var arrayDate = date.split("-");
-            
-            var year = arrayDate[0];
-            var month= arrayDate[1];
-            var date = arrayDate[2];
-            
-            if(date != "")
-            {
-                alert("year: "+year+"month: "+month+"date: "+date);
-            }
-            else{
-                alert("date not entered!");
-            }
-            
-        }
-        
+    </script>
+    
+    <script> 
+        $(document).ready(function(){
+            //loading the elements slowly
+            $("#add_btn").fadeIn(1000);
+            $("#add_btn_text").fadeIn(1000);
+            $("#settings_btn").fadeIn(2000);
+            $("#settings_text").fadeIn(2000);
+            $("#todo_container").fadeIn(3000);
+        });
     </script>
 </head>
 
 <body>
     <div id="add_btn" onclick="visibleON();">+</div>
     <div id="add_btn_text">ADD TODO</div>
+    
+    <!--settings button-->
+    <div id="settings_btn"></div>
+    <div id="settings_text">SETTINGS</div>
 
     <!--dim dark background-->
     <div id="dark_bg"></div>
@@ -87,6 +83,9 @@
     <div id="todo_container">
         <div id="card_center_wrapper">
             
+            
+            <!--content will be displayed here-->
+            
             <!--<div id='lonelymsg'></div>-->
             <!--
             <div id="todo_card">
@@ -109,11 +108,9 @@
 
     <!--footer-->
     <div id="designer">mi6softlab</div>
+    
+    <script src="js/todo_db.js"></script>
 
 </body>
-
-
-
-<script src="js/todo_db.js"></script>
 
 </html>

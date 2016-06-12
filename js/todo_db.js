@@ -2,11 +2,13 @@
 
 if(window.openDatabase){
     //create the database for the todo
-    // required fields are Date, Task, Description, and Tag : 1024*1024 = 1MB
+    // required fields are Date, Task, Description, and Tag : database size> 2*1024*1024 = 2MB
     var db = openDatabase("tododb","0.1","todo_database", 2*1024*1024);
     
     db.transaction(function(t){
         t.executeSql("CREATE TABLE IF NOT EXISTS todotb (idtodo INTEGER PRIMARY KEY ASC, date TEXT, task TEXT, desc TEXT, tag TEXT)");
+        
+        //test query
         //t.executeSql("INSERT INTO todotb (date, task, desc, tag) VALUES (2016, games, description, tag)");
     });
 }
@@ -14,6 +16,7 @@ else{
     alert("Something went wrong!");
 }
 
+//add items to todo list
 function addTodo(){
     //check status of db is available
     if(db){
@@ -44,6 +47,7 @@ function addTodo(){
     }
 }
 
+//display todo list
 function displayTodo(){
     //check status of db is available
     if(db){
@@ -58,6 +62,7 @@ function displayTodo(){
     }
 }
 
+//refresh the todolist: after add and delete item
 function refreshTodo(transaction, results){
     var todoTask = "";
     var todoList = document.getElementById("card_center_wrapper");
@@ -75,18 +80,19 @@ function refreshTodo(transaction, results){
 
             //get the date and remove each content as year, month and date
             var dateEntry = todoRow.date;
+            
+            /* reserved for future dev
             var arrayDate = dateEntry.split("-");
 
             var year = arrayDate[0];
             var month= arrayDate[1];
-            var curdate = arrayDate[2]; 
+            var curdate = arrayDate[2];  */
 
             //display the info in todo cards
-            todoList.innerHTML += "<div id='todo_card'><div class='todo_info'><div class='card_task'>"+todoRow.task+"</div><div class='card_Description'>"+todoRow.desc+"</div><div class='block'><div class='card_small_info'>Year: "+year+" month: "+month+" date: "+curdate+"</div><div class='card_small_info'>Tag: "+todoRow.tag+"</div></div></div><a href='javascript:void(0);' onclick='removeTodo(" + todoRow.idtodo + ");'><div class='delete_btn smooth'><div class='deletebtn smooth'></div></div></a></div>";
+            todoList.innerHTML += "<div id='todo_card'><div class='todo_info'><div class='card_task'>"+todoRow.task+"</div><div class='card_Description'>"+todoRow.desc+"</div><div class='block'><div class='card_small_info'>Date: "+dateEntry+"</div><div class='card_small_info'>Tag: "+todoRow.tag+"</div></div></div><a href='javascript:void(0);' onclick='removeTodo(" + todoRow.idtodo + ");'><div class='delete_btn smooth'><div class='deletebtn smooth'></div></div></a></div>";
         }
     }
 }
-
 
 function removeTodo(idtodo){
     //check status of db available
@@ -99,6 +105,5 @@ function removeTodo(idtodo){
         alert("Something went wrong!");
     }
 }
-
 
 displayTodo();
