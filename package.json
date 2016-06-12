@@ -1,7 +1,7 @@
 {
-  "name": "testapp",
+  "name": "todoAPP",
   "version": "1.0.0",
-  "description": "simple test app",
+  "description": "todoAPP",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
