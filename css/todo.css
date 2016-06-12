@@ -2,7 +2,8 @@
 
 #todo_input_wrapper {
     width: 526px;
-    height: 314px; /*should be auto*/
+    height: 314px;
+    /*should be auto*/
     position: absolute;
     left: 0;
     right: 0;
@@ -12,25 +13,19 @@
     margin: auto;
     border-radius: 2px;
     z-index: 7000;
-    
     display: none;
-    
     background-color: white;
-    
     -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
 }
-
 .todo_head_text {
     width: 100%;
     height: 50px;
     float: left;
-    
     background-color: transparent;
     border-bottom: 1px solid rgba(238, 238, 238, 1);
 }
-
 .input {
     width: 100%;
     border-style: none;
@@ -40,16 +35,13 @@
     text-indent: 10px;
     display: block;
     box-sizing: border-box;
-    
     font-size: 14px;
     color: rgba(0, 0, 0, 0.84);
     background-color: rgba(238, 238, 238, 0.4);
 }
-
-.input:hover{
+.input:hover {
     border: 1px solid rgba(238, 238, 238, 1);
 }
-
 .todo_input_wrapper {
     width: 100%;
     -moz-box-sizing: border-box;
@@ -59,7 +51,6 @@
     float: left;
     padding: 5px;
 }
-
 .todo_input_wrapper_half {
     width: 50%;
     -moz-box-sizing: border-box;
@@ -69,9 +60,6 @@
     float: left;
     padding: 5px;
 }
-
-
-
 #add_btn {
     width: 40px;
     height: 40px;
@@ -81,66 +69,53 @@
     margin: 12px;
     cursor: pointer;
     z-index: 5000;
-    
     text-align: center;
     line-height: 40px;
     font-size: 22px;
     color: rgba(0, 0, 0, 0.4);
-    
     background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
-    
     -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
-    
     /*for jquery load*/
     display: none;
 }
-
-#add_btn:hover{
+#add_btn:hover {
     color: rgba(0, 0, 0, 0.84);
-    
     -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.1);
 }
-
-#add_btn:hover + #add_btn_text{
+#add_btn:hover + #add_btn_text {
     /*display: block;*/
     opacity: 1;
 }
-
 .head_txt {
     line-height: 50px;
     font-size: 16px;
     text-align: center;
     font-weight: 700;
 }
-
-
-
-
-
 #add_btn_text {
-    width: 100px;;
+    width: 100px;
+    ;
     height: 40px;
     position: absolute;
     top: 0;
-    left: 50px;;
+    left: 50px;
+    ;
     margin: 12px;
     float: left;
     line-height: 40px;
     text-align: center;
     font-weight: 500;
     z-index: 5000;
-    
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
     color: rgba(0, 0, 0, 0.4);
     background-color: rgba(0, 0, 0, 0.01);
-    
     /*display: none;*/
     opacity: 0;
     -webkit-transition: all 0.3s ease-in-out;
@@ -148,35 +123,25 @@
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    
     /*for jquery load*/
     display: none;
 }
-
-
-
 .exit_btn {
     position: absolute;
     right: 0;
     top: 0;
     margin: 13px;
     cursor: pointer;
-    
     width: 24px;
     height: 24px;
     background: url(../assets/svg/exit_btn.svg)no-repeat;
     opacity: 0.5;
-    
     border-radius: 50%;
 }
-
-.exit_btn:hover{
+.exit_btn:hover {
     opacity: 0.84;
     background-color: rgba(238, 238, 238, 1);
 }
-
-
-
 #todo_container {
     width: 100%;
     height: 100%;
@@ -188,16 +153,13 @@
     margin-left: auto;
     margin-right: auto;
     overflow-y: auto;
-    
     /*for jquery load*/
     display: none;
 }
-
 #todo_card {
     width: 526px;
     height: auto;
     float: left;
-    
     /*
     margin-left: auto;
     margin-right: auto;
@@ -205,33 +167,24 @@
     margin-bottom: 5px;
     left: 0;
     right: 0; */
-    
     margin: 5px;
     display: block;
-    
     background-color: white;
-    
     border-radius: 2px;
-    
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    
     -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
 }
-
-#todo_card:hover{
+#todo_card:hover {
     -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
 }
-
-
-
 #card_center_wrapper {
     margin-top: 50px;
     width: 536px;
@@ -243,47 +196,36 @@
     left: 0;
     right: 0;
 }
-
 #dark_bg {
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: 6000;
-    
     display: none;
-    
     background-color: rgba(0, 0, 0, 0.8);
 }
-
 .delete_btn {
     width: 100%;
     height: 20px;
-    
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px;
     margin-left: auto;
     margin-right: auto;
-    
     cursor: pointer;
     display: block;
     float: left;
-    
     text-align: center;
     line-height: 20px;
     font-size: 14;
-    color:  rgba(0, 0, 0, 0.4);
-    
+    color: rgba(0, 0, 0, 0.4);
     background-color: rgba(226, 106, 106, 0.54);
 }
-
 .delete_btn:hover {
     background-color: rgba(226, 106, 106, 1);
 }
-
-.delete_btn:hover .deletebtn{
+.delete_btn:hover .deletebtn {
     opacity: 0.84;
 }
-
 .todo_info {
     width: 512px;
     height: auto;
@@ -293,11 +235,9 @@
     margin-bottom: 5px;
     padding: 2px;
     float: left;
-    
     display: block;
     word-break: break-all;
 }
-
 .deletebtn {
     width: 18px;
     height: 18px;
@@ -310,48 +250,38 @@
     background: url(../assets/svg/delete_btn.svg);
     opacity: 0.5;
 }
-
-
-
 .card_task {
     width: 100%;
     height: auto;
     float: left;
     display: block;
     color: rgba(0, 0, 0, 0.84);
-    
     line-height: 30px;
     font-size: 20px;
 }
-
 .card_small_info {
     width: 50%;
     height: auto;
     float: left;
     display: block;
-    
     line-height: 30px;
     font-size: 14px;
 }
-
 .block {
     width: 100%;
     height: auto;
     float: left;
     display: block;
 }
-
 .card_Description {
     width: 100%;
     height: auto;
     float: left;
     display: block;
     color: rgba(0, 0, 0, 0.54);
-    
     line-height: 30px;
     font-size: 14px;
 }
-
 .input_btn {
     width: 150px;
     border-style: none;
@@ -368,24 +298,19 @@
     left: 0;
     right: 0;
     cursor: pointer;
-    
     font-size: 14px;
     color: rgba(0, 0, 0, 0.54);
     background-color: rgba(238, 238, 238, 0.4);
 }
-
-.input_btn:hover{
+.input_btn:hover {
     background-color: rgba(33, 150, 243, 0.84);
     color: white;
 }
-
 #lonelymsg {
     width: 526px;
     height: 400px;
-    
     background: url(../assets/svg/lonely.svg);
 }
-
 #settings_btn {
     width: 40px;
     height: 40px;
@@ -395,47 +320,41 @@
     margin: 12px;
     cursor: pointer;
     z-index: 5000;
-    
     background-color: white;
     background: url(../assets/svg/settings.svg) no-repeat 0px 0px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
-    
     -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
-    
     /*for jquery load*/
     display: none;
 }
-
-#settings_btn:hover{
+#settings_btn:hover {
     color: rgba(0, 0, 0, 0.84);
     background: url(../assets/svg/settings.svg) no-repeat 0px -43px;
-    
     -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.1);
 }
-
 #settings_text {
-    width: 100px;;
+    width: 100px;
+    ;
     height: 40px;
     position: absolute;
     top: 50px;
-    left: 50px;;
+    left: 50px;
+    ;
     margin: 12px;
     float: left;
     line-height: 40px;
     text-align: center;
     font-weight: 500;
     z-index: 5000;
-    
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
     color: rgba(0, 0, 0, 0.4);
     background-color: rgba(0, 0, 0, 0.01);
-    
     /*display: none;*/
     opacity: 0;
     -webkit-transition: all 0.3s ease-in-out;
@@ -443,14 +362,10 @@
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    
     /*for jquery load*/
     display: none;
 }
-
-#settings_btn:hover + #settings_text{
+#settings_btn:hover + #settings_text {
     /*display: block;*/
     opacity: 1;
 }
-
-
