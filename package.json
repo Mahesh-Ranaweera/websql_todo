@@ -4,11 +4,14 @@
   "description": "simple test app",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-packager . todoAPP --platform=win32 --arch=all --ignore=node_modules/electron-* --version=1.0.0 --icon=assets/img/logo.png.icns --out=build/"
   },
   "author": "mi6softlab",
   "license": "ISC",
   "devDependencies": {
+    "asar": "^0.11.0",
+    "electron-packager": "^7.0.3",
     "electron-prebuilt": "^1.2.1"
   }
 }
