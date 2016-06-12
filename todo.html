@@ -22,6 +22,25 @@
             document.getElementById('todo_input_wrapper').style.display = "none";
             document.getElementById('dark_bg').style.display = "none";
         }
+        
+        function display(){
+            var date = document.getElementById("date_txt").value;
+            var arrayDate = date.split("-");
+            
+            var year = arrayDate[0];
+            var month= arrayDate[1];
+            var date = arrayDate[2];
+            
+            if(date != "")
+            {
+                alert("year: "+year+"month: "+month+"date: "+date);
+            }
+            else{
+                alert("date not entered!");
+            }
+            
+        }
+        
     </script>
 </head>
 
@@ -33,6 +52,7 @@
     <div id="dark_bg"></div>
     
     <div id="todo_input_wrapper">
+        
         <div class="todo_head_text">
             <div class="head_txt">TODO</div>
             <div class="exit_btn" onclick="visibleOFF();"></div>
@@ -40,55 +60,51 @@
 
         <div class="todo_input_wrapper_half">
             <label>Title:</label>
-            <input class="input" type="text" id="task" placeholder="Enter the Title" />
+            <input class="input" type="text" id="title_txt" placeholder="Enter the Title" />
         </div>
 
         <div class="todo_input_wrapper_half">
             <label>Date:</label>
-            <input class="input" type="date" id="task" placeholder="Enter the Task" />
+            <input class="input" type="date" id="date_txt" placeholder="Date" />
         </div>
 
         <div class="todo_input_wrapper">
             <label>Task:</label>
-            <input class="input" type="text" id="task" placeholder="Enter the Task" />
+            <input class="input" type="text" id="task_txt" placeholder="Enter the Task" />
         </div>
 
         <div class="todo_input_wrapper">
             <label>Description:</label>
-            <input class="input" type="text" id="task" placeholder="Enter Description" />
+            <input class="input" type="text" id="desc_txt" placeholder="Enter Description" />
         </div>
 
         <div class="todo_input_wrapper">
             <label>Tag:</label>
-            <input class="input" type="text" id="task" placeholder="Enter the Tag" />
+            <input class="input" type="text" id="tag_txt" placeholder="Enter the Tag" />
+        </div>
+        
+        <div class="todo_input_wrapper">
+            <input class="input_btn smooth" type="button" value="submit" id="submit_todo" onclick="addTodo();"/>
         </div>
     </div>
 
     <!--todo display container-->
     <div id="todo_container">
         <div class="card_center_wrapper">
-            <div id="todo_card">
+            <!--<div id="todo_card">
                 <div class="todo_info">
                     <div class="card_task">Task asdasdasssssaaaaaaaaaaaaaaaaaaaaa</div>
                     <div class="card_Description">Description</div>
                     <div class="block">
-                        <div class="card_small_info">Time</div>
-                        <div class="card_small_info">Time</div>
+                        <div class="card_small_info">Date:</div>
+                        <div class="card_small_info">Tag:</div>
                     </div>
                 </div>
                 <div class="delete_btn smooth">
                     <div class="deletebtn smooth"></div>
                 </div>
-            </div>
-            <div id="todo_card"></div>
-            <div id="todo_card"></div>
-            <div id="todo_card"></div>
-            <div id="todo_card"></div>
-            <div id="todo_card"></div>
-            <div id="todo_card"></div>
-            <div id="todo_card"></div>
-            <div id="todo_card"></div>
-            <div id="todo_card"></div>
+            </div>-->
+            
         </div>
     </div>
 
@@ -100,6 +116,6 @@
 
 
 
-<script src="js/testdb.js"></script>
+<script src="js/todo_db.js"></script>
 
 </html>
